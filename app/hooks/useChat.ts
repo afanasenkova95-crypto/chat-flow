@@ -39,7 +39,9 @@ export function useChat() {
           body: JSON.stringify({
             messages: apiMessages,
             presentationContext: {
-              topic: state.topic,
+              topic: state.attachments.some(a => a.type === 'text/plain')
+                ? state.topic.slice(0, 200) + '...'
+                : state.topic,
               themeName: state.selectedTheme?.name,
               themeId: state.selectedTheme?.id,
               attachments: state.attachments,

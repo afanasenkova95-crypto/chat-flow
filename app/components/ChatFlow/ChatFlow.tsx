@@ -112,12 +112,15 @@ export default function ChatFlow({ onPreviewReady, isSplitView = false }: ChatFl
     if (hasInitializedRef.current) return;
     hasInitializedRef.current = true;
 
-    let initialMessage = state.topic;
+    const hasTextAttachment = state.attachments.some((a) => a.type === 'text/plain');
+    let initialMessage = hasTextAttachment
+      ? 'Создай презентацию на основе введённого текста'
+      : state.topic;
     if (state.attachments.length > 0) {
       const fileNames = state.attachments.map((a) => a.name).join(', ');
-      if (initialMessage) {
+      if (initialMessage && !hasTextAttachment) {
         initialMessage += `\n\nПрикреплённые файлы: ${fileNames}`;
-      } else {
+      } else if (!hasTextAttachment) {
         initialMessage = `Создай презентацию на основе прикреплённых файлов: ${fileNames}`;
       }
     }

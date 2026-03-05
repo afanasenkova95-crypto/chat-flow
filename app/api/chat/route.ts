@@ -13,7 +13,10 @@ export async function POST(request: NextRequest) {
     const attachmentList = presentationContext?.attachments?.map((a: { name: string }) => a.name).join(', ') || 'None';
     const attachmentContents = presentationContext?.attachments
       ?.filter((a: { content?: string }) => a.content)
-      .map((a: { name: string; content: string }) => `\n--- File: ${a.name} ---\n${a.content}`)
+      .map((a: { name: string; content: string }) => {
+        const text = a.content.length > 12000 ? a.content.slice(0, 12000) + '\n...[текст обрезан]' : a.content;
+        return `\n--- File: ${a.name} ---\n${text}`;
+      })
       .join('\n') || '';
 
     const currentPhase = presentationContext?.phase || 'requirements';
@@ -107,10 +110,11 @@ ${attachmentContents ? `\nAttached file contents:\n${attachmentContents}` : ''}
         Connection: 'keep-alive',
       },
     });
-  } catch (error) {
-    console.error('Chat API error:', error);
+  } catch (error: unknown) {
+    const errMsg = error instanceof Error ? error.message : String(error);
+    console.error('Chat API error:', errMsg);
     return Response.json(
-      { error: 'Failed to process chat request' },
+      { error: errMsg || 'Failed to process chat request' },
       { status: 500 }
     );
   }
