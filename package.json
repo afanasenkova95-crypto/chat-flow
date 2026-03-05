@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "postinstall": "npm run setup-fonts",
     "build": "next build",
     "start": "next start",
     "setup-fonts": "DIST=node_modules/@campstudio/camp-ui-kit/dist && if [ -d \"$DIST\" ]; then mkdir -p $DIST/fonts && cp public/fonts/*.ttf $DIST/fonts/ && cd $DIST/fonts && for f in *.ttf; do b=\"${f%.ttf}\"; cp \"$f\" \"$b.woff2\"; cp \"$f\" \"$b.woff\"; done && cd - > /dev/null && CSS=$(ls $DIST/styles-*.css 2>/dev/null | head -1) && [ -n \"$CSS\" ] && ln -sf $(basename $CSS) $DIST/styles.css; fi"
