@@ -106,7 +106,7 @@ export default function ChatFlow({ onPreviewReady, isSplitView = false }: ChatFl
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [state.chatMessages]);
+  }, [state.chatMessages, postStructureMessages, phase]);
 
   useEffect(() => {
     if (hasInitializedRef.current) return;
