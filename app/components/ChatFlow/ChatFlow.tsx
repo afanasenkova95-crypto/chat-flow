@@ -299,7 +299,7 @@ ${slideList}
     const flushList = () => {
       if (listItems.length > 0) {
         elements.push(
-          <ol key={`list-${elements.length}`}>
+          <ol key={`list-${elements.length}`} className={styles.messageList}>
             {listItems.map((item, i) => {
               const match = item.match(/^\d+\.\s*\*\*(.*?)\*\*\s*(.*)/);
               if (match) {

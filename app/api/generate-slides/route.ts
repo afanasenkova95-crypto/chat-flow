@@ -14,23 +14,9 @@ interface RawSlide {
   tag?: string;
 }
 
-async function resolveImageUrl(prompt: string): Promise<string> {
-  const keywords = encodeURIComponent(prompt.trim());
-  const url = `https://api.unsplash.com/search/photos?query=${keywords}&per_page=1&orientation=landscape`;
-  try {
-    const res = await fetch(url, {
-      headers: { Authorization: 'Client-ID 1rnyOQOaJeHFSJKwH8k2MbQ7v9IVZqRwKqEyDr2Kdj0' },
-    });
-    if (res.ok) {
-      const data = await res.json();
-      if (data.results?.[0]?.urls?.regular) {
-        return data.results[0].urls.regular;
-      }
-    }
-  } catch {
-    // fall through to fallback
-  }
-  return `https://images.unsplash.com/photo-1557683316-973673baf926?w=800&h=450&fit=crop`;
+function resolveImageUrl(prompt: string, index: number): string {
+  const keywords = prompt.trim().split(/\s+/).slice(0, 4).join(',');
+  return `https://loremflickr.com/800/450/${encodeURIComponent(keywords)}?lock=${index}`;
 }
 
 export async function POST(request: NextRequest) {
@@ -69,12 +55,11 @@ Generate the full slide content for each slide in the structure.`,
       slides = JSON.parse(content);
     }
 
-    const imageSlides = slides.filter(s => s.layout === 'image-text' && s.imagePrompt);
-    await Promise.all(
-      imageSlides.map(async (slide) => {
-        slide.imageUrl = await resolveImageUrl(slide.imagePrompt!);
-      })
-    );
+    slides.forEach((slide, i) => {
+      if (slide.layout === 'image-text' && slide.imagePrompt) {
+        slide.imageUrl = resolveImageUrl(slide.imagePrompt, i);
+      }
+    });
 
     return Response.json({ slides });
   } catch (error) {

@@ -64,11 +64,14 @@
 
 .aiText ol,
 .aiText ul {
-  margin-top: 16px;
   padding-left: 24px;
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.messageList {
+  margin-top: 16px;
 }
 
 .aiText ol li,
