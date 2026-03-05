@@ -347,7 +347,7 @@ ${slideList}
           {state.attachments.map((att) => (
             <div key={att.id} className={styles.fileChip}>
               <div className={att.type === 'url' ? styles.fileChipLinkIcon : styles.fileChipIcon}>
-                {att.type === 'url' ? '🔗' : att.type.includes('pdf') ? 'PDF' : '📎'}
+                {att.type === 'url' ? '🔗' : att.type.includes('pdf') ? 'PDF' : att.type === 'text/plain' ? 'TXT' : '📎'}
               </div>
               <div className={styles.fileChipInfo}>
                 <span className={styles.fileChipName}>{att.name}</span>
@@ -469,6 +469,17 @@ ${slideList}
                     <div className={loadingStyles.thumbLink}>
                       <img src={favicon} alt="" className={loadingStyles.thumbLinkFavicon} />
                       <span className={loadingStyles.thumbLinkDomain}>{domain}</span>
+                    </div>
+                  );
+                }
+                const textAtt = state.attachments.find((a) => a.type === 'text/plain');
+                if (textAtt) {
+                  return (
+                    <div className={loadingStyles.thumbText}>
+                      <span className={loadingStyles.thumbTextLabel}>TXT</span>
+                      <span className={loadingStyles.thumbTextPreview}>
+                        {textAtt.content?.slice(0, 60)}...
+                      </span>
                     </div>
                   );
                 }

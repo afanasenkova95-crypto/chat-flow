@@ -69,6 +69,41 @@
   white-space: nowrap;
 }
 
+.thumbText {
+  width: 128px;
+  height: 74px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--grey-5);
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  overflow: hidden;
+}
+
+.thumbTextLabel {
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 12px;
+  color: var(--black-1);
+  background: var(--grey-6);
+  padding: 1px 4px;
+  border-radius: 3px;
+  align-self: flex-start;
+}
+
+.thumbTextPreview {
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 11px;
+  color: var(--black-5);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
 .thumbTheme {
   width: 128px;
   height: 74px;

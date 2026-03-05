@@ -80,12 +80,16 @@ export default function EntryScreen({ onContinue }: EntryScreenProps) {
                   {state.attachments.map((att) => (
                     <div key={att.id} className={styles.attachmentChip}>
                       <div className={att.type === 'url' ? styles.chipLinkIcon : styles.chipFileIcon}>
-                        {att.type === 'url' ? '🔗' : att.type.includes('pdf') ? 'PDF' : '📎'}
+                        {att.type === 'url' ? '🔗' : att.type.includes('pdf') ? 'PDF' : att.type === 'text/plain' ? 'TXT' : '📎'}
                       </div>
                       <div className={styles.chipInfo}>
                         <span className={styles.chipName}>{att.name}</span>
                         <span className={styles.chipSize}>
-                          {att.size > 0 ? `${(att.size / 1024 / 1024).toFixed(1)} Мб` : 'ссылка'}
+                          {att.size > 0
+                            ? att.size > 1024 * 1024
+                              ? `${(att.size / 1024 / 1024).toFixed(1)} Мб`
+                              : `${(att.size / 1024).toFixed(1)} Кб`
+                            : 'ссылка'}
                         </span>
                       </div>
                       <button
@@ -162,7 +166,22 @@ export default function EntryScreen({ onContinue }: EntryScreenProps) {
           <div className={styles.bottomNav}>
             <button
               className={styles.continueBtn}
-              onClick={onContinue}
+              onClick={() => {
+                if (state.topic.length > 300) {
+                  const textContent = state.topic;
+                  dispatch({
+                    type: 'ADD_ATTACHMENT',
+                    attachment: {
+                      id: crypto.randomUUID(),
+                      name: 'Введённый текст',
+                      size: new Blob([textContent]).size,
+                      type: 'text/plain',
+                      content: textContent,
+                    },
+                  });
+                }
+                onContinue();
+              }}
             >
               <span className={styles.continueBtnText}>Продолжить</span>
               <FigmaIcon name="right-arrow" size={24} color="white" />
