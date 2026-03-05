@@ -84,9 +84,11 @@ export const SLIDES_PROMPT = `Generate slide content as a JSON array. Each slide
 - number (integer)
 - title (string)
 - content (string, the main text/paragraph for the slide)
-- layout (one of: "title", "content", "two-column", "bullets", "quote")
+- layout (one of: "title", "content", "two-column", "bullets", "quote", "image-text")
 - bullets (optional array of strings for bullet point slides)
-- imagePrompt (string, a description for an image that would suit this slide)
+- imagePrompt (string, 2-4 English keywords for an image search, e.g. "neural network technology", "nature landscape forest")
 - tag (optional string)
+
+IMPORTANT: Use the "image-text" layout for exactly 1-2 slides in the presentation. These slides show an image on the left and text on the right. For image-text slides, provide a relevant imagePrompt with 2-4 English keywords that describe a suitable photo.
 
 Return ONLY valid JSON wrapped in \`\`\`json code blocks. Make the content informative, well-structured, and suitable for a professional presentation.`;

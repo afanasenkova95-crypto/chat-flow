@@ -61,6 +61,27 @@ export default function SlideRenderer({
           </div>
         );
 
+      case 'image-text':
+        return (
+          <div className={styles.imageTextSlide}>
+            <div className={styles.imageTextImage}>
+              {slide.imageUrl ? (
+                <img src={slide.imageUrl} alt={slide.title} className={styles.slideImage} />
+              ) : (
+                <div className={styles.imagePlaceholder} style={{ background: colors.accent, opacity: 0.15 }} />
+              )}
+            </div>
+            <div className={styles.imageTextContent}>
+              <h3 className={styles.sectionTitle} style={{ color: colors.text }}>
+                {slide.title}
+              </h3>
+              <p className={styles.contentText} style={{ color: colors.text, opacity: 0.85 }}>
+                {slide.content}
+              </p>
+            </div>
+          </div>
+        );
+
       case 'two-column':
         return (
           <div className={styles.twoColumnSlide}>
