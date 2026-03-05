@@ -1,0 +1,108 @@
+.editorHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 8px 32px;
+  width: 100%;
+}
+
+.editorHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  display: block;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.title {
+  font-size: var(--font-xs);
+  font-weight: 500;
+  line-height: var(--line-md);
+  color: var(--black-1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subtitle {
+  font-size: var(--font-2xs);
+  font-weight: 400;
+  line-height: var(--line-sm);
+  color: var(--black-5);
+}
+
+.editorHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.undoRedoGroup {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.headerBtnGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.headerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  background: var(--white);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.headerBtn:hover {
+  background: var(--grey-6);
+}
+
+.headerBtnOutline {
+  border: 1px solid var(--grey-5);
+}
+
+.headerBtnFilled {
+  background: var(--grey-6);
+  border: 1px solid var(--grey-5);
+}
+
+.headerBtnBlack {
+  background: var(--black-1);
+}
+
+.headerBtnBlack:hover {
+  opacity: 0.9;
+  background: var(--black-1);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--grey-5);
+}
+
+.editorContent {
+  height: calc(100vh - 62px);
+}

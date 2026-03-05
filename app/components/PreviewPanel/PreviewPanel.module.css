@@ -1,0 +1,153 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--white);
+  border: 1px solid var(--grey-5);
+  border-radius: 24px;
+  box-shadow: 0px 4px 20px 0px rgba(139, 139, 139, 0.08);
+  padding: 24px;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.titleWrapper {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: var(--line-md);
+  color: var(--black-1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.subtitle {
+  font-size: var(--font-2xs);
+  font-weight: 400;
+  line-height: var(--line-sm);
+  color: var(--black-5);
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  height: 44px;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 12px;
+  border: 1px solid var(--grey-5);
+  border-radius: var(--radius-xs);
+  background: var(--white);
+  cursor: pointer;
+  font-size: var(--font-2xs);
+  font-weight: 500;
+  line-height: var(--line-sm);
+  color: var(--black-1);
+  font-family: inherit;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.actionBtn:hover {
+  background: var(--grey-6);
+}
+
+.actionBtnWithText {
+  padding: 12px;
+  gap: 8px;
+}
+
+.actionBtnGrey {
+  background: var(--grey-6);
+  border-color: var(--grey-5);
+}
+
+.actionBtnGrey:hover {
+  background: var(--grey-5);
+}
+
+.primaryActionBtn {
+  background: var(--black-1);
+  color: var(--white);
+  border-color: var(--black-1);
+}
+
+.primaryActionBtn:hover {
+  opacity: 0.9;
+  background: var(--black-1);
+}
+
+.mainSlide {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.slidesList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.slideCard {
+  position: relative;
+  width: 100%;
+  height: 412px;
+  border-radius: 20px;
+  border: 1px solid var(--grey-4);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.slideCard:hover {
+  border-color: var(--black-5);
+}
+
+.slideCardActive {
+  border: 2px solid var(--black-1);
+}
+
+.numberBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 24px;
+  height: 24px;
+  background: rgba(35, 35, 35, 0.32);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: var(--line-md);
+  color: white;
+  z-index: 1;
+}

@@ -1,33 +1,82 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'Oceanic Grotesk';
+  src: url('/fonts/Oceanic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Oceanic Grotesk';
+  src: url('/fonts/Oceanic-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --white: #ffffff;
+  --black-1: #232323;
+  --black-3: #b4b4b4;
+  --black-4: #8e8e8e;
+  --black-5: #7a7f82;
+  --grey-1: #8e9498;
+  --grey-4: #d3dade;
+  --grey-5: #e4ebef;
+  --grey-6: #f2f6f8;
+  --orange-6: #ff6b35;
+
+  --radius-2xs: 8px;
+  --radius-xs: 10px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+
+  --shadow-m: 0px 4px 12px rgba(139, 139, 139, 0.08);
+  --shadow-l: 0px 4px 20px rgba(139, 139, 139, 0.08);
+
+  --font-3xs: 12px;
+  --font-2xs: 14px;
+  --font-xs: 16px;
+  --font-md: 20px;
+  --font-lg: 24px;
+  --font-xl: 28px;
+  --font-2xl: 32px;
+  --font-3xl: 40px;
+
+  --line-xs: 16px;
+  --line-sm: 20px;
+  --line-md: 24px;
+  --line-lg: 28px;
+  --line-xl: 32px;
+  --line-2xl: 36px;
+  --line-3xl: 40px;
+  --line-4xl: 48px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  height: 100%;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Oceanic Grotesk', sans-serif;
+  color: var(--black-1);
+  background: var(--white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 a {
@@ -35,8 +84,18 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input, textarea {
+  font-family: inherit;
 }

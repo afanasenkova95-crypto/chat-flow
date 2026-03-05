@@ -1,0 +1,134 @@
+.slide {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.titleSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  padding: 10% 8%;
+  gap: 16px;
+}
+
+.slideTitle {
+  font-size: clamp(20px, 3.5vw, 36px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.slideSubtitle {
+  font-size: clamp(12px, 1.5vw, 18px);
+  line-height: 1.5;
+  max-width: 70%;
+}
+
+.contentSlide {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 8%;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-size: clamp(16px, 2.5vw, 28px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.contentText {
+  font-size: clamp(10px, 1.2vw, 16px);
+  line-height: 1.6;
+}
+
+.bulletsSlide {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 8%;
+  gap: 16px;
+}
+
+.bulletList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bulletItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: clamp(10px, 1.2vw, 15px);
+  line-height: 1.5;
+}
+
+.bulletDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+.twoColumnSlide {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 8%;
+  gap: 16px;
+}
+
+.columns {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+}
+
+.column {
+  flex: 1;
+  font-size: clamp(10px, 1.2vw, 14px);
+  line-height: 1.6;
+}
+
+.quoteSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 10%;
+  text-align: center;
+  gap: 12px;
+}
+
+.quoteDecor {
+  font-size: 64px;
+  line-height: 1;
+}
+
+.quoteText {
+  font-size: clamp(14px, 2vw, 22px);
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 80%;
+}
+
+.quoteAuthor {
+  font-size: clamp(10px, 1vw, 14px);
+  margin-top: 8px;
+}
+
+.slideNumber {
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}

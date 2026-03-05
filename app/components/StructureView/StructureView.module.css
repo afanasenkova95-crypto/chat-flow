@@ -1,0 +1,241 @@
+.container {
+  width: 100%;
+  border: 1px solid var(--grey-5);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px;
+  background: var(--white);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.headerTitleGroup {
+  flex: 1;
+  min-width: 0;
+}
+
+.headerTitle {
+  font-size: var(--font-xs);
+  font-weight: 500;
+  line-height: var(--line-md);
+  color: var(--black-1);
+}
+
+.headerHint {
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: var(--line-md);
+  color: var(--black-5);
+}
+
+.collapseBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--grey-5);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  cursor: grab;
+  position: relative;
+  transition: background 0.15s;
+  border-radius: var(--radius-xs);
+  padding: 4px;
+  margin: -4px;
+}
+
+.item:active {
+  cursor: grabbing;
+}
+
+.itemDragOver {
+  background: var(--grey-6);
+}
+
+.number {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff602b;
+  border-radius: 100px;
+  font-size: var(--font-2xs);
+  font-weight: 500;
+  line-height: var(--line-sm);
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.itemContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemContentEditing {
+  gap: 16px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.itemTitle {
+  font-size: var(--font-xs);
+  font-weight: 500;
+  line-height: var(--line-md);
+  color: var(--black-1);
+}
+
+.itemTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  background: #ffefe9;
+  border-radius: 6px;
+  font-size: var(--font-2xs);
+  font-weight: 500;
+  line-height: var(--line-sm);
+  color: #ff602b;
+  white-space: nowrap;
+}
+
+.itemDescription {
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: var(--line-md);
+  color: var(--black-5);
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  flex-shrink: 0;
+}
+
+.editInput {
+  width: 100%;
+  border: 1px solid var(--grey-5);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  font-size: var(--font-xs);
+  font-weight: 500;
+  line-height: var(--line-md);
+  color: var(--black-1);
+  background: var(--grey-6);
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.editInput:hover {
+  border: 2px solid var(--grey-4);
+  padding: 15px;
+}
+
+.editInput:focus {
+  border: 2px solid var(--grey-5);
+  padding: 15px;
+}
+
+.editTextarea {
+  width: 100%;
+  border: 1px solid var(--grey-5);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: var(--line-md);
+  color: var(--black-1);
+  background: var(--grey-6);
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.editTextarea::placeholder {
+  color: var(--black-5);
+}
+
+.editTextarea:hover {
+  border: 2px solid var(--grey-4);
+  padding: 15px;
+}
+
+.editTextarea:focus {
+  border: 2px solid var(--grey-5);
+  padding: 15px;
+}
+
+.addSlideRow {
+  padding: 0 20px 20px;
+}
+
+.addSlideBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px dashed var(--grey-4);
+  border-radius: var(--radius-xs);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  width: 100%;
+  justify-content: center;
+}
+
+.addSlideBtn:hover {
+  background: var(--grey-6);
+  border-color: var(--black-5);
+}
+
+.addSlideText {
+  font-size: var(--font-2xs);
+  font-weight: 400;
+  line-height: var(--line-sm);
+  color: var(--black-5);
+}

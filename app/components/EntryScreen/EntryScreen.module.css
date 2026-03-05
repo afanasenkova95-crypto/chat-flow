@@ -1,0 +1,443 @@
+.wrapper {
+  width: 100%;
+  background: var(--white);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--grey-5);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 72px 48px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.content {
+  width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.titleBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: var(--font-3xl);
+  font-weight: 500;
+  line-height: var(--line-4xl);
+  color: var(--black-1);
+}
+
+.description {
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: var(--line-md);
+  color: var(--black-1);
+}
+
+.inputCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.textAreaWrapper {
+  width: 100%;
+  background: var(--grey-6);
+  border: 1px solid var(--grey-5);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-end;
+  min-height: 164px;
+  transition: min-height 0.2s ease;
+}
+
+.textAreaWrapperExpanded {
+  min-height: 220px;
+}
+
+.attachmentsInInput {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.attachmentChip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: var(--white);
+  border: 1px solid var(--grey-5);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-l);
+  max-width: 224px;
+  position: relative;
+}
+
+.chipFileIcon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e74c3c;
+  color: white;
+  border-radius: 6px;
+  font-size: 9px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.chipLinkIcon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #D1DFFF;
+  border-radius: 6px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.chipInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.chipName {
+  font-size: var(--font-2xs);
+  font-weight: 400;
+  line-height: var(--line-sm);
+  color: var(--black-1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chipSize {
+  font-size: var(--font-3xs);
+  font-weight: 400;
+  line-height: var(--line-xs);
+  color: var(--black-5);
+}
+
+.chipRemove {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--black-1);
+  color: var(--white);
+  cursor: pointer;
+  flex-shrink: 0;
+  position: absolute;
+  top: -7px;
+  right: -5px;
+  padding: 4px;
+}
+
+.textArea {
+  width: 100%;
+  flex: 1;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: var(--line-md);
+  color: var(--black-1);
+  background: transparent;
+  font-family: inherit;
+}
+
+.textArea::placeholder {
+  color: var(--black-5);
+}
+
+.inputActions {
+  display: flex;
+  gap: 12px;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 44px;
+  min-width: 44px;
+  padding: 12px;
+  border: 1px solid var(--grey-5);
+  border-radius: var(--radius-xs);
+  background: var(--white);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.actionBtn:hover {
+  background: var(--grey-6);
+}
+
+.actionBtnText {
+  font-size: var(--font-2xs);
+  font-weight: 500;
+  line-height: var(--line-sm);
+  color: var(--black-1);
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
+.actionBtnIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.themeCard {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--grey-5);
+  border-radius: var(--radius-2xl);
+  padding: 20px 24px 24px;
+  box-shadow: var(--shadow-l);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.themeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.themeLabel {
+  font-size: var(--font-xs);
+  font-weight: 500;
+  line-height: var(--line-md);
+  color: var(--black-1);
+}
+
+.themeShowMore {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-3xs);
+  font-weight: 400;
+  line-height: var(--line-xs);
+  color: var(--black-5);
+  cursor: pointer;
+}
+
+.themeShowMore:hover {
+  color: var(--black-1);
+}
+
+.themeGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+}
+
+.bottomNav {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1320px;
+  padding: 0 32px;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.continueBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  height: 56px;
+  min-width: 135px;
+  padding: 16px;
+  background: var(--black-1);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.continueBtn:hover {
+  opacity: 0.9;
+}
+
+.continueBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.continueBtnText {
+  font-size: var(--font-xs);
+  font-weight: 500;
+  line-height: var(--line-md);
+  color: var(--white);
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(35, 35, 35, 0.32);
+  backdrop-filter: blur(16px);
+}
+
+.popover {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.popoverNav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.popoverClose {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--white);
+}
+
+.popoverDialog {
+  width: 100%;
+  background: var(--white);
+  border-radius: 32px;
+  padding: 32px;
+  overflow: hidden;
+}
+
+.popoverContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.popoverMain {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.popoverIcon {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+}
+
+.popoverTextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.popoverTitleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+.popoverTitle {
+  font-size: var(--font-2xl);
+  font-weight: 500;
+  line-height: var(--line-3xl);
+  color: var(--black-1);
+}
+
+.popoverSubtitle {
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: var(--line-md);
+  color: var(--black-4);
+}
+
+.popoverInput {
+  width: 100%;
+  padding: 16px;
+  background: var(--grey-6);
+  border: 1px solid var(--grey-5);
+  border-radius: var(--radius-md);
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: var(--line-md);
+  color: var(--black-1);
+  font-family: inherit;
+  outline: none;
+}
+
+.popoverInput::placeholder {
+  color: var(--black-5);
+}
+
+.popoverSubmit {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black-1);
+  border-radius: var(--radius-md);
+  font-size: var(--font-xs);
+  font-weight: 500;
+  line-height: var(--line-md);
+  color: var(--white);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.popoverSubmit:hover {
+  opacity: 0.9;
+}

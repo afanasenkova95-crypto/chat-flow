@@ -1,0 +1,204 @@
+.container {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--grey-5);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-l);
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.thumb {
+  width: 128px;
+  height: 74px;
+  flex-shrink: 0;
+  margin-top: -24px;
+  filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.08));
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.thumb img {
+  width: 128px;
+  height: 74px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--grey-5);
+  display: block;
+}
+
+.thumbLink {
+  width: 128px;
+  height: 74px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--grey-5);
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.thumbLinkFavicon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+.thumbLinkDomain {
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 12px;
+  color: var(--black-5);
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.thumbTheme {
+  width: 128px;
+  height: 74px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--grey-5);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+}
+
+.thumbThemeName {
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 13px;
+  width: 100%;
+}
+
+.thumbThemeSub {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--font-xs);
+  font-weight: 500;
+  line-height: var(--line-md);
+  color: var(--black-1);
+}
+
+.subtitle {
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: var(--line-md);
+  color: var(--black-5);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.progress {
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: var(--line-md);
+  color: var(--black-5);
+  white-space: nowrap;
+}
+
+.steps {
+  padding: 0 16px 16px 0;
+  margin-left: 160px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stepRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.stepIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 12px;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.stepDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--grey-4);
+  flex-shrink: 0;
+}
+
+.stepDotDone {
+  background: var(--black-1);
+}
+
+.stepDotActive {
+  background: var(--black-1);
+  box-shadow: 0 0 0 3px rgba(35, 35, 35, 0.15);
+}
+
+.stepLine {
+  width: 1.5px;
+  flex: 1;
+  min-height: 16px;
+  background: var(--grey-4);
+}
+
+.stepLineDone {
+  background: var(--black-1);
+}
+
+.stepLabel {
+  font-size: var(--font-2xs);
+  font-weight: 400;
+  line-height: var(--line-sm);
+  color: var(--black-5);
+  padding-bottom: 8px;
+}
+
+.stepLabelDone {
+  color: var(--black-1);
+}
+
+.stepLabelActive {
+  color: var(--black-1);
+  font-weight: 500;
+}

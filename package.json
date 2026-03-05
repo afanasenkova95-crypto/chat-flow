@@ -1,19 +1,27 @@
 {
-  "name": "chat-flow-temp",
+  "name": "chat-flow",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "setup-fonts": "DIST=node_modules/@campstudio/camp-ui-kit/dist && if [ -d \"$DIST\" ]; then mkdir -p $DIST/fonts && cp public/fonts/*.ttf $DIST/fonts/ && cd $DIST/fonts && for f in *.ttf; do b=\"${f%.ttf}\"; cp \"$f\" \"$b.woff2\"; cp \"$f\" \"$b.woff\"; done && cd - > /dev/null && CSS=$(ls $DIST/styles-*.css 2>/dev/null | head -1) && [ -n \"$CSS\" ] && ln -sf $(basename $CSS) $DIST/styles.css; fi"
   },
   "dependencies": {
-    "next": "16.1.6",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "@campstudio/camp-ui-kit": "^0.1.45",
+    "@floating-ui/react": "^0.27.19",
+    "figma-squircle": "^1.1.0",
+    "framer-motion": "^12.34.5",
+    "next": "^15",
+    "openai": "^4",
+    "pdf-parse": "^2.4.5",
+    "react": "^19",
+    "react-colorful": "^5.6.1",
+    "react-dom": "^19"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "typescript": "^5"

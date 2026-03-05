@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--camp-grey-5, #e6eaed);
+  border-radius: var(--camp-radius-md, 12px);
+  background: #fff;
+}
+
+.themePreview {
+  width: 127px;
+  height: 73px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.message {
+  font-size: var(--camp-typo-s-size, 16px);
+  font-weight: var(--camp-weight-medium, 500);
+  line-height: var(--camp-typo-s-line, 24px);
+  color: var(--camp-black-1, #232323);
+}
+
+.submessage {
+  font-size: var(--camp-typo-s-size, 16px);
+  line-height: var(--camp-typo-s-line, 24px);
+  color: var(--camp-black-4, #8e8e8e);
+}
+
+.progress {
+  font-size: var(--camp-typo-s-size, 16px);
+  color: var(--camp-black-4, #8e8e8e);
+  flex-shrink: 0;
+}
